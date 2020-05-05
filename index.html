@@ -1,68 +1,108 @@
-<html>
-  <head>
-    <title>Search Keywords</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="author" content="colorlib.com">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:400,800" rel="stylesheet" />
-    <link href="css/search.css" rel="stylesheet" />
-    <link rel="stylesheet" type="text/css" href="css/util.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="css/util.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
 
-  </head>
-  <body>
-    <div class="s006">
-      <form>
-        <fieldset>
-          <legend>What do you want to eat?</legend>
-          <div class="inner-form">
-            <div class="input-field">
-              <!--COMMENT: This is the search botton. Click it will do the search
-              (run sql queries display result in the table below)-->
-              <button class="btn-search" type="button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                  <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                </svg>
-              </button>
-              <input id="search" type="text" placeholder="" value="sushi, italian, pizza..." />
-            </div>
-          </div>
-        </fieldset>
-      </form>
-    </div>
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-50">
+				<form class="login100-form validate-form">
+					<span class="login100-form-title p-b-33">
+						Account Login
+					</span>
+
+					<!--COMMENT: Input box to enter userid and password. We want to search for this user's weekly schedule-->
+					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
+						<input class="input100" type="text" name="email" placeholder="Email">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
+
+					<div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
+						<input class="input100" type="password" name="pass" placeholder="Password">
+						<span class="focus-input100-1"></span>
+						<span class="focus-input100-2"></span>
+					</div>
 
 
 
-    <!-- COMMENT: The following is the table to display the search result. -->
+					<!--COMMENT: Sign-in button. Click it will link to the table page of the specific user.-->
+					<div class="container-login100-form-btn m-t-20">
+						<a class="login100-form-btn" href="weekly_schedule.html">
+							Sign in
+						</a>
+					</div>
 
-    <div class="limiter">
-      <div class="container-table100">
-        <div class="wrap-table100">
 
-          <div class="table100 ver5 m-b-110">
-            <table data-vertable="ver5">
-              <tbody>
-                <!--COMMENT: Row 1 of the result. Click it should insert the dish into
-                Weekly Schedule Table at the backend. Also link back to weekly_schedule.html-->
-                <tr class="row100">
-                  <td class="column100" data-column="column2"> Dish Name </td>
-                  <td class="column100" data-column="column2"> Restuarant</td>
-                  <td class="column100" data-column="column2"> Price</td>
-                </tr>
 
-                <!--COMMENT: Row 2. Same as row 1.-->
-                <tr class="row100">
-                  <td class="column100" data-column="column2"> Dish Name </td>
-                  <td class="column100" data-column="column2"> Restuarant</td>
-                  <td class="column100" data-column="column2"> Price</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
+					<div class="text-center p-t-45 p-b-4">
+						<span class="txt1">
+							Forgot
+						</span>
 
-    </div>
+						<a href="#" class="txt2 hov1">
+							Username / Password?
+						</a>
+					</div>
 
-  </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+					<div class="text-center">
+						<span class="txt1">
+							Create an account?
+						</span>
+
+						<a href="#" class="txt2 hov1">
+							Sign up
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+
+
+
+<!--===============================================================================================-->
+	<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/bootstrap/js/popper.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/daterangepicker/moment.min.js"></script>
+	<script src="vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
 </html>
