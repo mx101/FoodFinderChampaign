@@ -197,7 +197,7 @@ $conn->close();
             </table>
             <div style = "font-size:11px; color:#002933; margin-top:10px">
               <a href="restaurant.php">
-              Don't know what to eat? Check out featrued restaurants!
+              Don't know what to eat? Check out featured restaurants!
               </a>
             </div>
           </div>

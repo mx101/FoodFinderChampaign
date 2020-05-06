@@ -96,7 +96,7 @@ $conn->close();
           <select class="select-css-day" name="type">
             <option value="populariy" selected="selected">Populariy</option>
             <option value="pricehigh">Price: High-to-Low</option>
-            <option value="pricelow">Price: Low-to-</option>
+            <option value="pricelow">Price: Low-to-High</option>
           </select>
 
           </br>
