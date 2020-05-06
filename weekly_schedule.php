@@ -37,10 +37,10 @@ if ($result->num_rows > 0) {
 }
 
 if($_POST['clear']) {
-  $sql1 = "DELETE Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName,
-  Fri_DishName, Sat_DishName, Sun_DishName From weekly_schedule
-  WHERE ScheduleID = '$User_ID';";
-  mysqli_query($db, $sql1);
+//   $sql1 = "DELETE Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName,
+//   Fri_DishName, Sat_DishName, Sun_DishName From weekly_schedule
+//   WHERE ScheduleID = '$User_ID';";
+//   mysqli_query($db, $sql1);
   $warning = "All data cleared.";
 }
 
