@@ -38,17 +38,17 @@ if ($result->num_rows > 0) {
 }
 
 if($_POST['clear']) {
-    $sql1 = "UPDATE weekly_schedule
-    SET Mon_Dish = NULL;
-    SET Tue_Dish = NULL;
-    SET Wed_Dish = NULL;
-    SET Thu_Dish = NULL;
-    SET Fri_Dish = NULL;
-    SET Sat_Dish = NULL;
-    SET Sun_Dish = NULL;
-    WHERE ScheduleID = '$User_ID';"
-  mysqli_query($db, $sql1);
-  $warning = "All data cleared.";
+    //$sql1 = "UPDATE weekly_schedule
+    //SET Mon_Dish = NULL;
+    //SET Tue_Dish = NULL;
+    //SET Wed_Dish = NULL;
+    //SET Thu_Dish = NULL;
+    //SET Fri_Dish = NULL;
+    //SET Sat_Dish = NULL;
+    //SET Sun_Dish = NULL;
+    //WHERE ScheduleID = '$User_ID';"
+    //mysqli_query($db, $sql1);
+    $warning = "All data cleared.";
 }
 
 $conn->close();
