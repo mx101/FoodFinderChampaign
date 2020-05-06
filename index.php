@@ -20,8 +20,8 @@
 
       if($count == 1) {
          $_SESSION['login_id'] = $row["UserID"];
-         echo $row["UserID"];
-         //header("Location:weekly_schedule.php");
+         //echo $row["UserID"];
+         header("Location:weekly_schedule.php");
       }else {
          $error = "Your Login Name or Password is invalid";
       }
