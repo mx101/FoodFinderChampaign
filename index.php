@@ -19,8 +19,7 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 
       if($count == 1) {
-         $_SESSION['login_id'] = $result['UserID'];
-
+         $_SESSION['login_id'] = $result->fetch_object()->UserID;
          header("Location:weekly_schedule.php");
       }else {
          $error = "Your Login Name or Password is invalid";
