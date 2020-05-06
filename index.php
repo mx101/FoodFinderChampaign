@@ -19,9 +19,8 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 
       if($count == 1) {
-         $getUserID = $mysqli -> query($sql)->fetch_object()->UserID;
-         $_SESSION['login_id'] = $getUserID;
-         echo $getUserID;
+         $_SESSION['login_id'] = $row["UserID"];
+         echo $row["UserID"];
          //header("Location:weekly_schedule.php");
       }else {
          $error = "Your Login Name or Password is invalid";
