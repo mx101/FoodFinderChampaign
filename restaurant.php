@@ -104,7 +104,6 @@ $conn->close();
 
           <select class="select-css-dish" size=10>
             <option><?php echo $array_result[0]['name']; ?></option>
-            <option><?php echo $array_result[0]['name']; ?></option>
             <option><?php echo $array_result[1]['name']; ?></option>
             <option><?php echo $array_result[2]['name']; ?></option>
             <option><?php echo $array_result[3]['name']; ?></option>
@@ -113,6 +112,7 @@ $conn->close();
             <option><?php echo $array_result[6]['name']; ?></option>
             <option><?php echo $array_result[7]['name']; ?></option>
             <option><?php echo $array_result[8]['name']; ?></option>
+            <option><?php echo $array_result[9]['name']; ?></option>
           </select>
 
           <div class="container-login100-form-btn m-t-20">
