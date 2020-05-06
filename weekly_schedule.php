@@ -24,14 +24,53 @@ $result = $conn->query($sql);
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
-        $Weekly_budget = $row["Weekly_Budget"];
-        $Monday_dish = $row["Mon_DishName"];
-        $Tuesday_dish = $row["Tue_DishName"];
-        $Wednesday_dish = $row["Wed_DishName"];
-        $Thursday_dish = $row["Thu_DishName"];
-        $Friday_dish = $row["Fri_DishName"];
-        $Saturday_dish = $row["Sat_DishName"];
-        $Sunday_dish = $row["Sun_DishName"];
+        if ($row["Weekly_Budget"] != 0) {
+            $Weekly_budget = $row["Weekly_Budget"];
+        } else {
+            $Weekly_budget = 0;
+        }
+
+        if (is_null($row["Mon_DishName"])) {
+            $Monday_dish = "";
+        } else {
+            $Monday_dish = $row["Mon_DishName"];
+        }
+
+        if (is_null($row["Tue_DishName"])) {
+            $Tuesday_dish = "";
+        } else {
+            $Tuesday_dish = $row["Tue_DishName"];
+        }
+
+        if (is_null($row["Wed_DishName"])) {
+            $Wednesday_dish = "";
+        } else {
+            $Wednesday_dish = $row["Wed_DishName"];
+        }
+
+        if (is_null($row["Thu_DishName"])) {
+            $Thursday_dish = "";
+        } else {
+            $Thursday_dish = $row["Thu_DishName"];
+        }
+
+        if (is_null($row["Fri_DishName"])) {
+            $Friday_dish = "";
+        } else {
+            $Friday_dish = $row["Fri_DishName"];
+        }
+
+        if (is_null($row["Sat_DishName"])) {
+            $Saturday_dish = "";
+        } else {
+            $Saturday_dish = $row["Sat_DishName"];
+        }
+
+        if (is_null($row["Sun_DishName"])) {
+            $Sunday_dish = "";
+        } else {
+            $Sunday_dish = $row["Sun_DishName"];
+        }
     }
 } else {
     echo "0 results";
