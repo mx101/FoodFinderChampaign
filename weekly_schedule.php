@@ -8,7 +8,7 @@ $username = "admin";
 $password = "CS411uiuc";
 $dbname = "foodfinderdatabase";
 
-$User_Name = $_SESSION['login_user'];
+$User_ID = $_SESSION['login_id'];
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -17,7 +17,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName, Fri_DishName, Sat_DishName, Sun_DishName FROM foodfinderdatabase.weekly_schedule w INNER JOIN foodfinderdatabase.users ON w.ScheduleID = users.UserID WHERE users.Name = '$User_Name'";
+$sql = "SELECT Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName, Fri_DishName, Sat_DishName, Sun_DishName FROM foodfinderdatabase.weekly_schedule w INNER JOIN foodfinderdatabase.users ON w.ScheduleID = users.UserID WHERE users.UserID = '$User_ID'";
 
 $result = $conn->query($sql);
 
@@ -35,6 +35,15 @@ if ($result->num_rows > 0) {
 } else {
     echo "0 results";
 }
+
+if($_POST['clear']) {
+  $sql1 = "DELETE Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName,
+  Fri_DishName, Sat_DishName, Sun_DishName From weekly_schedule
+  WHERE ScheduleID = '$User_ID';";
+  mysqli_query($db, $sql1);
+  $warning = "All data cleared.";
+}
+
 $conn->close();
 ?>
 
@@ -62,9 +71,23 @@ $conn->close();
   <!--===============================================================================================-->
   </head>
   <body>
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
     <div class="limiter">
       <div class="container-table100">
         <div class="wrap-table100">
+          <div class="container-table-form-btn">
+            <a class="table-form-btn" href="search.php">
+              ADD
+            </a>
+          </div>
+          
+            <div class="container-table-form-btn">
+              <input class="table-form-btn" type="submit" name="clear" value="CLEAR">
+            </div>
+          
+          <div style = “font-size:11px; color:#cc0000; margin-top:10px”><?php echo $warning; ?></div>
+
+        </br>
 
           <div class="table100 ver5 m-b-110">
             <table data-vertable="ver5">
@@ -125,6 +148,7 @@ $conn->close();
         <script src="vendor/select2/select2.min.js"></script>
     <!--===============================================================================================-->
         <script src="js/main.js"></script>
+   </form>
   </body>
 </html>
 
