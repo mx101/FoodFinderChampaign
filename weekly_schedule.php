@@ -38,10 +38,16 @@ if ($result->num_rows > 0) {
 }
 
 if($_POST['clear']) {
-//   $sql1 = "DELETE Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName,
-//   Fri_DishName, Sat_DishName, Sun_DishName From weekly_schedule
-//   WHERE ScheduleID = '$User_ID';";
-//   mysqli_query($db, $sql1);
+    $sql1 = "UPDATE weekly_schedule
+    SET Mon_Dish = NULL;
+    SET Tue_Dish = NULL;
+    SET Wed_Dish = NULL;
+    SET Thu_Dish = NULL;
+    SET Fri_Dish = NULL;
+    SET Sat_Dish = NULL;
+    SET Sun_Dish = NULL;
+    WHERE ScheduleID = '$User_ID';"
+  mysqli_query($db, $sql1);
   $warning = "All data cleared.";
 }
 
@@ -81,11 +87,11 @@ $conn->close();
               ADD
             </a>
           </div>
-          
+
             <div class="container-table-form-btn">
               <input class="table-form-btn" type="submit" name="clear" value="CLEAR">
             </div>
-          
+
           <div style = “font-size:11px; color:#cc0000; margin-top:10px”><?php echo $warning; ?></div>
 
         </br>
@@ -110,7 +116,7 @@ $conn->close();
                 <tr class="row100">
                   <!--COMMENT: Monday. Click it will lead to the search page for monday.-->
                   <td class="column100 column2" data-column="column2" style="text-align:center"> <?php echo $Weekly_budget ?> </td>
-                    
+
                   <!--COMMENT: Monday. Click it will lead to the search page for monday.-->
                   <td class="column100 column2" data-column="column2" style="text-align:center"> <?php echo $Monday_dish ?> </td>
 
@@ -156,5 +162,3 @@ $conn->close();
    </form>
   </body>
 </html>
-
-
