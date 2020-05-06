@@ -65,6 +65,8 @@ if($_POST["search"]) {
   }
 }
 
+$conn->close();
+?>
 
 
 
@@ -72,8 +74,7 @@ if($_POST["search"]) {
 
 
 
-
-<html>
+</html>
   <head>
     <title>Search Keywords</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -121,7 +122,7 @@ if($_POST["search"]) {
         </br>
 
           <div class="container-login100-form-btn">
-              <a class="container-login100-form-btn" href="weekly_schedules.php">
+              <a class="container-login100-form-btn" href="weekly_schedule.php">
                 BACK
               </a>
           </div>
