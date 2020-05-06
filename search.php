@@ -7,7 +7,6 @@ $username = "admin";
 $password = "CS411uiuc";
 $dbname = "foodfinderdatabase";
 
-$User_Name = $_SESSION['login_user'];
 
 
 // Create connection
@@ -18,7 +17,7 @@ if ($conn->connect_error) {
 }
 
 
-$User_ID = 1;
+$User_ID = $_SESSION['login_id'];
 $keyword = mysqli_real_escape_string($conn, $_POST['keyword']);
 
 $sql = "SELECT ranking.Name AS Dish_Name, r.Name AS Restaurant_Name, (ranking.count + (r.Overall_Rating) / 5) AS rank
@@ -78,7 +77,6 @@ $conn->close();
 
 </html>
   <head>
-    <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "post">
     <title>Search Keywords</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -91,7 +89,7 @@ $conn->close();
   </head>
   <body>
     <div class="s006">
-      <form>
+      <form action = "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method = "post">
         <fieldset>
           <legend>What do you want to eat?</legend>
           <div class="inner-form">
