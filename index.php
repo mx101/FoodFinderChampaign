@@ -6,10 +6,10 @@
 
       // username and password sent from form 
       
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
+      $myuserID = mysqli_real_escape_string($db,$_POST['UserID']);
       $mypassword = mysqli_real_escape_string($db,$_POST['password']); 
       
-      $sql = "SELECT UserID, Name, password FROM users WHERE Name = '$myusername' and password = '$mypassword'";
+      $sql = "SELECT UserID, Name, password FROM users WHERE UserID = '$myuserID' and password = '$mypassword'";
       $result = mysqli_query($db,$sql);
       $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
       $active = $row['active'];
@@ -19,7 +19,8 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
         
       if($count == 1) {
-         $_SESSION['login_user'] = $myusername;
+         $_SESSION['login_id'] = $myuserID;
+
          
          header("Location:weekly_schedule.php");
       }else {
@@ -73,7 +74,7 @@
               
                <!--COMMENT: Input box to enter userid and password. We want to search for this user's weekly schedule-->
                   <div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
-                     <input class="input100" type="text" name="username" placeholder="Email">
+                     <input class="input100" type="text" name="UserID" placeholder="ID">
                      <span class="focus-input100-1"></span>
                      <span class="focus-input100-2"></span>
                   </div>
