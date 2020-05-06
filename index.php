@@ -19,10 +19,9 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 
       if($count == 1) {
-         $sql = "SELECT UserID FROM users WHERE Name = '$myusername'";
+         $sql = "SELECT UserID FROM users WHERE Name = '$myusername';";
          $result = mysqli_query($db,$sql);
          $_SESSION['login_id'] = $result;
-
 
          header("Location:weekly_schedule.php");
       }else {
