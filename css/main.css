@@ -114,8 +114,8 @@ iframe {
 
 .container-table100 {
   width: 100%;
-  min-height: 120vh;
-  padding: 33px 30px;
+  min-height: 100vh;
+  padding: 35px 0px;
   background: #9ab2b8;
 
   display: -webkit-box;
@@ -449,6 +449,50 @@ input.input100 {
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
+
+
+/* .login100-form-btn:hover {
+  background-color: #333333;
+} */
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-table-form-btn {
+  width: 15%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 10px;
+}
+
+.table-form-btn {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 30px;
+  background-color: #002933;
+
+  font-family: Montserrat-Regular;
+  font-size: 14px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 
 /* .login100-form-btn:hover {
   background-color: #333333;
