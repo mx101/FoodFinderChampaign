@@ -46,7 +46,7 @@
                      <span class="focus-input100-1"></span>
                      <span class="focus-input100-2"></span>
                   </div>
- 
+
                   <div class="wrap-input100 rs1 validate-input" data-validate="Password is required">
                      <input class="input100" type="password" name="password_1" placeholder="Password">
                      <span class="focus-input100-1"></span>
@@ -74,7 +74,7 @@
                      Already have an account?
                   </span>
 
-                  <a href="login.php" class="txt2 hov1">
+                  <a href="index.php" class="txt2 hov1">
                      Log in here.
                   </a>
                </div>
