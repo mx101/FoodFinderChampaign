@@ -17,13 +17,14 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName, Fri_DishName, Sat_DishName, Sun_DishName FROM foodfinderdatabase.weekly_schedule w INNER JOIN foodfinderdatabase.users ON w.ScheduleID = users.UserID WHERE users.UserID = '$User_ID'";
+$sql = "SELECT Weekly_Budget, Mon_DishName, Tue_DishName, Wed_DishName, Thu_DishName, Fri_DishName, Sat_DishName, Sun_DishName FROM foodfinderdatabase.weekly_schedule w INNER JOIN foodfinderdatabase.users ON w.ScheduleID = users.UserID WHERE users.UserID = '$User_ID'";
 
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     // output data of each row
     while($row = $result->fetch_assoc()) {
+        $Weekly_budget = $row["Weekly_Budget"];
         $Monday_dish = $row["Mon_DishName"];
         $Tuesday_dish = $row["Tue_DishName"];
         $Wednesday_dish = $row["Wed_DishName"];
@@ -93,6 +94,7 @@ $conn->close();
             <table data-vertable="ver5">
               <thead>
                 <tr class="row100 head">
+                  <th class="column100 column1" data-column="column2" style="text-align:center">Budget</th>
                   <th class="column100 column2" data-column="column2" style="text-align:center">Monday</th>
                   <th class="column100 column3" data-column="column3" style="text-align:center">Tuesday</th>
                   <th class="column100 column4" data-column="column4" style="text-align:center">Wednesday</th>
@@ -106,6 +108,9 @@ $conn->close();
               <!--COMMENT: The body of the table.-->
               <tbody>
                 <tr class="row100">
+                  <!--COMMENT: Monday. Click it will lead to the search page for monday.-->
+                  <td class="column100 column2" data-column="column2" style="text-align:center"> <?php echo $Weekly_budget ?> </td>
+                    
                   <!--COMMENT: Monday. Click it will lead to the search page for monday.-->
                   <td class="column100 column2" data-column="column2" style="text-align:center"> <?php echo $Monday_dish ?> </td>
 
