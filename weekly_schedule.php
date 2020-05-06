@@ -40,7 +40,7 @@ if ($result->num_rows > 0) {
 if($_POST['clear']) {
     $sql1 = "UPDATE weekly_schedule
         SET Mon_Dish = NULL, Tue_Dish = NULL, Wed_Dish = NULL, Thu_Dish = NULL, Fri_Dish = NULL, Sat_Dish = NULL, Sun_Dish = NULL
-        WHERE ScheduleID = '$User_ID';"
+        WHERE ScheduleID = '$User_ID';";
     mysqli_query($db, $sql1);
     $warning = "All data cleared.";
 }
