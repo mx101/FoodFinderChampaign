@@ -19,7 +19,7 @@
       // If result matched $myusername and $mypassword, table row must be 1 row
 
       if($count == 1) {
-         $_SESSION['login_id'] = $result['UserID']];
+         $_SESSION['login_id'] = $result['UserID'];
 
          header("Location:weekly_schedule.php");
       }else {
