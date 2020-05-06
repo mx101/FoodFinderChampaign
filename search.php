@@ -21,7 +21,6 @@ $keyword = mysqli_real_escape_string($conn, $_POST['keyword']);
 $array_result = array();
 
 if($_POST["search"]) {
-  $error_message1 = "something wrong";
 
   $sql1 = "SELECT ranking.Name AS Dish_Name , r.Name as Restaurant_Name, ranking.Price AS Price
   FROM restaurant r, (SELECT results.Name, results.Price, SUM(results.points) AS count, results.RestaurantID
