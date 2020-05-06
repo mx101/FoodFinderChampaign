@@ -84,6 +84,25 @@ if($_POST['clear']) {
     $warning = "All data cleared.";
 }
 
+if($_POST['delete']) {
+  try {
+      $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+      // set the PDO error mode to exception
+      $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      // sql to delete a record
+      $sql = "DELETE FROM users WHERRE userID = $User_ID;'";
+
+      // use exec() because no results are returned
+      $conn->exec($sql);
+      echo "Record deleted successfully";
+      }
+  catch(PDOException $e)
+      {
+      echo $sql . "<br>" . $e->getMessage();
+      }
+}
+
 $conn->close();
 ?>
 
@@ -116,14 +135,18 @@ $conn->close();
       <div class="container-table100">
         <div class="wrap-table100">
           <div class="container-table-form-btn">
+            <input class="table-form-btn" type="submit" name="delete" value="DELETE ACCOUNT">
+          </div>
+
+          <div class="container-table-form-btn">
             <a class="table-form-btn" href="search.php">
               ADD
             </a>
           </div>
 
-            <div class="container-table-form-btn">
-              <input class="table-form-btn" type="submit" name="clear" value="CLEAR">
-            </div>
+          <div class="container-table-form-btn">
+            <input class="table-form-btn" type="submit" name="clear" value="CLEAR">
+          </div>
 
           <div style = “font-size:11px; color:#cc0000; margin-top:10px”><?php echo $warning; ?></div>
 
