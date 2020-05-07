@@ -45,7 +45,7 @@ if($_POST["search"]) {
 
   if ($type == 'pricelow') {
     $sql1 = "SELECT ranking.Name AS name
-    FROM (SELECT f.RestaurantID, AVG(f.Popularity) AS low_price, COUNT(f.RestaurantID) AS cnt, r.Name
+    FROM (SELECT f.RestaurantID, AVG(f.Price) AS low_price, COUNT(f.RestaurantID) AS cnt, r.Name
     FROM food_dishes f, restaurant r
     WHERE f.RestaurantID = r.RestaurantID
     GROUP BY f.RestaurantID
